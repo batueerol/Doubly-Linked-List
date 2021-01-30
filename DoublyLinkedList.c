@@ -11,7 +11,7 @@ struct node {
 };
 struct node* list = NULL;
 
-//push fonksiyonu başa yeni eleman ekler listeyi oluşturmakta kullanılır.
+//push fonksiyonu baÅŸa yeni eleman ekler listeyi oluÅŸturmakta kullanÄ±lÄ±r.
 void push(struct node** head, int item) {
 	struct node *yeni = (struct node*)malloc(sizeof(struct node));
 	yeni->data = item;
@@ -31,7 +31,7 @@ void printList(struct node* head) {
 	}
 }
 
-// Düğüm değeri sonrası yeni düğüm ekleme fonksiyonu.
+// DÃ¼ÄŸÃ¼m deÄŸeri sonrasÄ± yeni dÃ¼ÄŸÃ¼m ekleme fonksiyonu.
 void ekle(int b) {
 	struct node* yeni = (struct node*)malloc(sizeof(struct node));
 	struct node* gecici = list;
@@ -44,17 +44,17 @@ void ekle(int b) {
 		if (gecici->data == c) {
 			yeni->data = b;
 			yeni->next = gecici->next;
-			if(gecici->next!=NULL) //Son elemandan sonrası için if yazdım.
+			if(gecici->next!=NULL) //Son elemandan sonrasÄ± iÃ§in if yazdÄ±m.
 				yeni->next->prev = yeni;
 			gecici->next = yeni;
 			yeni->prev = gecici;
 			printf("\nYeni olusan liste:\n");
-	        printList(list); //yeni listeyi görüntülemek için ekledim.
+	        printList(list); //yeni listeyi gÃ¶rÃ¼ntÃ¼lemek iÃ§in ekledim.
 			break;
 		}
 		gecici=gecici->next;
 		
-		if(gecici->next == NULL && gecici->data != c){ //Girilen deger listede yok ise bu koşul çalışır.
+		if(gecici->next == NULL && gecici->data != c){ //Girilen deger listede yok ise bu koÅŸul Ã§alÄ±ÅŸÄ±r.
 			printf("\nHatali Giris! Boyle bir dugum degeri yok!");
 			break;
 			getch();
@@ -72,7 +72,7 @@ int main() {
 	scanf("%d", &a);
 	
 	for (int i = 0; i < a; i++) {
-		n = rand() % 500;       //Random sayılar üretip push fonksiyonuna random sayıları yolladım.
+		n = rand() % 500;       //Random sayÄ±lar Ã¼retip push fonksiyonuna random sayÄ±larÄ± yolladÄ±m.
 		push(&list, n);
 	}
 	
